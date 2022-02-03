@@ -1,0 +1,125 @@
+---
+title: "Hw_01_responses_mmcc"
+output: html_notebook
+---
+
+```{r}
+x <- c(1,2,4)
+x
+```
+
+```{r}
+x[4]
+```
+Calling `x[4]` returns NA because you cannot index the 4th item of a set that only contains 3 items.
+
+```{r}
+q <- c(x,x,8)
+y <- mean(x)
+s <- sd(q)
+s
+```
+
+```{r}
+paste("My name is Maeve.")
+```
+
+```{r}
+a <- 1+1
+b <- 24/12
+c <- 100^2
+
+d <- (a+c) /b
+d
+y
+```
+
+```{r}
+m <- 100
+ls()
+rm(m)
+cat("the following objects are in my current environment:", ls())
+```
+
+```{r}
+oddcount=function(x)
+{
+  print(x)
+  k=0 # assign 0 to k
+  print(paste("k is initialized as",k))
+  for (n in x) {
+    print(paste("current x value being tested is", n))
+    if(n%%2==1) # %% is the modulo operator
+    {
+      k=k+1 
+      print(paste(n, "is an odd number!"))
+    } else
+    {
+      print(paste(n, "is an even number!"))
+    }
+    print(paste("k is currently", k))
+  }
+  print(paste("The final k is", k))
+  return(k)
+}
+
+oddcount(x=c(1,2,3,7,9))
+```
+
+```{r}
+oddcount(x=c(1,3,5))
+oddcount(x=c(1,2,3,7,9))
+print("there are four odd numbers in this vector")
+```
+
+```{r}
+evencount=function(x)
+{
+  print(x)
+  k=0 # assign 0 to k
+  print(paste("k is initialized as",k))
+  for (n in x) {
+    print(paste("current x value being tested is", n))
+    if(n%%2==0) # as above, use the modulo operator to test for even/odd
+    {
+      k=k+1 
+      print(paste(n, "is an even number!"))
+    } else
+    {
+      print(paste(n, "is an odd number!"))
+    }
+    print(paste("k is currently", k))
+  }
+  print(paste("The final k is", k))
+  return(k)
+}
+
+evencount(x=c(1,2,4,5,7,8,12))
+```
+
+9. A good project layout:
+  + protects data integrity (preventing you from introducing error by altering raw data files)
+  + allows the project to be portable (and enables collaborators to work on the same code from different machines) 
+  + is easy to follow, making it easier to pick up where you left off (saving you time and effort - good comments and clean code mean you don't have to repeat work or start from scratch each time) This is also vital to collaboration. Your code isn't useful if only *you* can understand it.
+  + is reusable - an organizational structure that works well can be easily repurposed
+  + is your starting point and sets the tone for the project. Keeping things organized from the start saves time, effort, tears, and headaches by protecting your data, keeping your code in good shape, and ensuring that the reason your code doesn't run is an actual error and not the fact that Jimbob the Computer Gremlin moved your files around without you noticing because it was already chaos to begin with.
+
+10. Three good rules of thumb:
+  + Treat data as read-only. Your data lives in one dedicated spot for the project, and you DO NOT TOUCH the raw data files. Any data analyses and manipulation occur in code, not in the raw file.
+  + Treat generated output as disposable. Get comfortable with figures and other outputs being iterable and re-writeable. When your code is complete, delete all the accumulated outputs you have, and run everything one final time to make sure it creates all the expected analyses and figures.
+  + Define functions in one place; execute/apply them in another. As you identify reusable code chunks and pull them into functions, separate them into function scripts so they don't clutter your analyses.
+  + (Additional Maeve rule of thumb, *always* use relative paths and path variables where you can. This keeps your code operating system-adaptable and reduces potential errors from misspelling file and directory path names.)
+
+11. The full path to my R installation is: `C:\Program Files\R`
+12. For Unix, that path might be: `/Program Files/R`
+13. `C:\Users\maeve\ucdrive\datsci`
+14. If the working directory is `C:\Users\maeve\ucdrive\`, the relative path is `datsci\HW_01_mmcc_responses.Rmd`
+15. `Users/maeve/ucdrive/` and `datsci/HW_01_mmcc_responses.Rmd`
+  + Thinking in other operating systems confuses me, but there's a cool tool in the earthpy package for Python called "io" that facilitates reading and writing filepaths using the default head "HOME" ro replace the entire front end of a directory path with the appropriate equivalent of `C:\Users\maeve`. It's really nice to be able to set a directory to `(et.io.HOME, "foldername")`, followed by `df <- read.csv(path, "projectfolder", "filename")` and not have to worry about directional slashes
+  + I'll probably introduce a folder to keep homework, projects, and in-class activities separate at some point, but I prefer the shortest possible filepath, and I find having a class folder is often sufficient and saves time on having to remember sub-folders.
+
+19. I cloned a repository for a data carpentry workshop about using R for geospatial analyses. This repo is extra cool to me because it contains files for the workshop activities ***and*** files and instructions for rendering the instructional materials for anyone who wants to use them in teaching. This is a public repository published by datacarpentry.org and maintained by Leah Wasser, Jemma Stachelek, Tyson Swetnam, Lauren O'Brien, Janani Selvaraj, Lachlan Deer, Chris Prener, and Juan Fung. Repo found [here][https://github.com/datacarpentry/r-intro-geospatial]
+
+20. For whatever reason I'm struggling to run the functions for the bingo card. At this point, I've been staring at a screen for too long and am going to call it enough for today. I have previously worked with Git and GitHub and feel comfortable forking, cloning, making commits, pushing, submitting pull requests, and even fetching upstream if need be. I'm happy to demonstrate this at another time but I am tired of fighting my computer at this point and need sleep.
+
+21. Github UN: MECMccormick
